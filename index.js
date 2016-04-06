@@ -12,20 +12,20 @@ var defaultOptions = {
         'ENOENT': true
     };
 
-function BrickLess(options){
+function BrickLess(options) {
     this.config = _.defaults(options, defaultOptions);
     this.config.paths = [this.config.root];
 }
 
-BrickLess.prototype.render = function(path, rootClass){
+BrickLess.prototype.render = function(path, rootClass) {
     return src(path)
-    .then(css => parse(css, rootClass))
-    .then(css => compile(css, {
-        paths: this.config.paths.concat(Path.dirname(path))
-    }));
+        .then(css => parse(css, rootClass))
+        .then(css => compile(css, {
+            paths: this.config.paths.concat(Path.dirname(path))
+        }));
 };
 
-function parse(css, rootClass){
+function parse(css, rootClass) {
     var header = '';
     css = css.replace(importFmt, statement => {
         header += statement + '\n';
@@ -40,7 +40,7 @@ function compile(src, config) {
             e ? reject(compileError(e)) : resolve(output.css)));
 }
 
-function compileError(e){
+function compileError(e) {
     var err = new Error();
     err.message = 'Error: ' + e.message;
     err.stack = JSON.stringify(e, null, 4);
@@ -55,4 +55,3 @@ function src(path) {
 }
 
 module.exports = options => new BrickLess(options);
-
