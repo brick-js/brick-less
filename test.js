@@ -1,6 +1,6 @@
 var chai = require("chai");
 var should = chai.should();
-var brickLess = require('./index.js');
+var brickLess = require('.');
 var Path = require('path');
 var fs = require('fs');
 chai.use(require("chai-as-promised"));
