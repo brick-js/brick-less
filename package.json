@@ -1,6 +1,6 @@
 {
   "name": "brick-less",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Less processor for brick.js",
   "main": "index.js",
   "scripts": {
@@ -17,9 +17,9 @@
   "author": "harttle",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/harttle/brick-less/issues"
+    "url": "https://github.com/brick-js/brick-less/issues"
   },
-  "homepage": "https://github.com/harttle/brick-less#readme",
+  "homepage": "https://github.com/brick-js/brick-less#readme",
   "dependencies": {
     "debug": "^2.2.0",
     "less": "^2.6.1",
