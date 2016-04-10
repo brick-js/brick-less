@@ -1,5 +1,8 @@
 # brick-less
 
+![Build Status](https://travis-ci.org/brick-js/brick-less.svg?branch=master)
+![Dependency manager](https://david-dm.org/brick-js/brick-less.png)
+
 Less processor for [brick.js][brk].
 
 ## Install
