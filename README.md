@@ -1,5 +1,6 @@
 # brick-less
 
+[![NPM version](https://img.shields.io/npm/v/brick-less.svg?style=flat)](https://www.npmjs.org/package/brick-less)
 ![Build Status](https://travis-ci.org/brick-js/brick-less.svg?branch=master)
 ![Dependency manager](https://david-dm.org/brick-js/brick-less.png)
 
