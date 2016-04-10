@@ -63,4 +63,4 @@ File homepage/index.less:
 
 > `../styles/mixins` is recommended, since IDEs don't known `<module root>`
 
-[brk]: https://github.com/harttle/brick.js
+[brk]: https://github.com/brick-js/brick.js
