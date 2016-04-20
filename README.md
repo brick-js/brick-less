@@ -22,14 +22,12 @@ var less = require('brick-less');
 
 var brk = brickJs({
     root: path.join(__dirname, 'modules'),
-    engine: new Liquid(),
-    path: {
-        css: 'index.less'
-    },
-    static: {
-        css: { processor: less }
+    css: {
+        entry: 'index.less'
     }
 });
+
+brk.processor('less', less());
 
 app.use('/', brk.express);
 ```
