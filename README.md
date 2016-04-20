@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/brick-less.svg?style=flat)](https://www.npmjs.org/package/brick-less)
 [![Build Status](https://travis-ci.org/brick-js/brick-less.svg?branch=master)](https://travis-ci.org/brick-js/brick-less)
-[![Coverage Status](https://coveralls.io/repos/github/brick-js/brick-less/badge.svg?branch=master)](https://coveralls.io/github/brick-js/brick-less?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/brick-js/brick-less/badge.svg?branch=master&foo=bar)](https://coveralls.io/github/brick-js/brick-less?branch=master)
 [![Dependency manager](https://david-dm.org/brick-js/brick-less.png)](https://david-dm.org/brick-js/brick-less)
 
 Less processor for [brick.js][brk].
