@@ -4,24 +4,20 @@ var less = require('less'),
     Path = require('path'),
     debug = require('debug')('brick-less:index');
 
-var defaultOptions = {
-        root: __dirname
-    },
-    importFmt = /@import\s*(?:(?:"[^"]*")|(?:'[^']*'))\s*;?/g,
+var importFmt = /@import\s*(?:(?:"[^"]*")|(?:'[^']*'))\s*;?/g,
     isSafe = {
         'ENOENT': true
     };
 
-function BrickLess(options) {
-    this.config = _.defaults(options, defaultOptions);
-    this.config.paths = [this.config.root];
+function BrickLess() {
+    this.root = Path.resolve(__dirname, 'bricks');
 }
 
 BrickLess.prototype.render = function(path, rootClass) {
     return src(path)
         .then(css => parse(css, rootClass))
         .then(css => compile(css, {
-            paths: this.config.paths.concat(Path.dirname(path))
+            paths: [this.root, Path.dirname(path)]
         }));
 };
 
