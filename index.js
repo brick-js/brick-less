@@ -2,15 +2,16 @@ var less = require('less'),
     _ = require('lodash'),
     fs = require('fs'),
     Path = require('path'),
-    debug = require('debug')('brick-less:index');
+    debug = require('debug')('brick-less:index'),
+    process = require('process');
 
 var importFmt = /@import\s*(?:(?:"[^"]*")|(?:'[^']*'))\s*;?/g,
     isSafe = {
         'ENOENT': true
     };
 
-function BrickLess() {
-    this.root = Path.resolve(__dirname, 'bricks');
+function BrickLess(options) {
+    this.root = options.root || process.cwd();
 }
 
 BrickLess.prototype.render = function(path, rootClass) {
@@ -31,6 +32,7 @@ function parse(css, rootClass) {
 }
 
 function compile(src, config) {
+    debug('compiling with config:', config);
     return new Promise((resolve, reject) =>
         less.render(src, config, (e, output) =>
             e ? reject(compileError(e)) : resolve(output.css)));
