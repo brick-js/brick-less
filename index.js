@@ -28,7 +28,7 @@ function parse(css, rootClass) {
         header += statement + '\n';
         return '';
     });
-    var body = rootClass ? `${rootClass}{\n${css}\n}` : src;
+    var body = rootClass ? `${rootClass}{\n${css}\n}` : css;
     return `${header}\n${body}\n`;
 }
 
